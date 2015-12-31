@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Ajax.BeginForm("LoadData", "Home", new AjaxOptions() { OnSuccess = "Result" }, new { }))
+{
+    <div class="form-group">
+        <input class="btn btn-success" type="submit" value="Load From Server" />
+    </div>
+}
+<div class="form-group">
+    <input class="btn btn-success" data="{}" type="button" load-partial="/Home/LoadData" dataType="html" value="Load From Server with Ajax method" />
+</div>
+<div id="result"></div>
